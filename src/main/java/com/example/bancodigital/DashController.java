@@ -13,6 +13,9 @@ import javafx.event.ActionEvent;
 import javafx.scene.Scene;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.FileReader;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 
 public class DashController {
@@ -28,7 +31,9 @@ public class DashController {
     protected Button reButton;
     @FXML
     protected Label dashText;
+
     JSONObject jsonUsers = new JSONObject();
+
 
 
 
@@ -51,26 +56,36 @@ public class DashController {
 
 
      public void loginDash(ActionEvent event)  throws  IOException{
-                if (jsonUsers.containsKey(inputName.getText())) {
-                     JSONObject tempUser =  (JSONObject) jsonUsers.get(inputName.getText());
+        JSONParser parser = new JSONParser();
+        FileReader reader = new FileReader("C:\\Users\\igore\\IdeaProjects\\Banco DIgital\\src\\main\\java\\com\\example\\bancodigital\\capiBas\\database.json");
+            try {
+                JSONObject jsonUsersRead = (JSONObject) parser.parse(reader);
+                if (jsonUsersRead.containsKey(inputName.getText())) {
 
-                     if (tempUser.get("password").equals(inputPassword.getText())) {
-                         // CRIA UMA SESSÃO PRO USUÁRIO NO LOGIN
-                         try(FileWriter writer = new FileWriter("C:\\Users\\igore\\IdeaProjects\\Banco DIgital\\src\\main\\java\\com\\example\\bancodigital\\capiBas\\database.json")) {
-                             writer.write(tempUser.toJSONString());
-                         }
-                         catch (IOException e) {
-                             e.printStackTrace();
-                         }
-                         // TROCAR PARA A PROXIMA TELA
-                         FXMLLoader carregar = new FXMLLoader(getClass().getResource("hub.fxml"));
-                         Parent newScreen = carregar.load();
-                         Node scene1 = (Node) event.getSource();
-                         Scene scene2 = scene1.getScene();
-                         scene2.setRoot(newScreen);
+                    JSONObject tempUser =  (JSONObject) jsonUsersRead.get(inputName.getText());
+
+                    if (tempUser.get("password").equals(inputPassword.getText())) {
+                        // CRIA UMA SESSÃO PRO USUÁRIO NO LOGIN
+                        try(FileWriter writer = new FileWriter("C:\\Users\\igore\\IdeaProjects\\Banco DIgital\\src\\main\\java\\com\\example\\bancodigital\\capiBas\\database.json")) {
+                            writer.write(tempUser.toJSONString());
+                        }
+                        catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                        // TROCAR PARA A PROXIMA TELA
+                        FXMLLoader carregar = new FXMLLoader(getClass().getResource("hub.fxml"));
+                        Parent newScreen = carregar.load();
+                        Node scene1 = (Node) event.getSource();
+                        Scene scene2 = scene1.getScene();
+                        scene2.setRoot(newScreen);
 
 
-                     }
+
+                    }
+
+                    else {
+                        dashText.setText("Senha ou Usuários incorretos.");
+                    }
 
 
 
@@ -81,6 +96,13 @@ public class DashController {
                 else {
                     System.out.println("Usuário não existe.");
                 }
+            }
+
+            catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+
     }
 
      public void loginChangeDash() {
