@@ -6,5 +6,7 @@ como POO, laços , tratamento de erros e If sentences.
  - JAVA FX
  - MAVEN
  - INTELLIJ
+
+
 *COMO EXECUTAR?*
 Por enquanto não recomendo tentar, pois o projeto ainda está em desenvolvimento absoluto.
