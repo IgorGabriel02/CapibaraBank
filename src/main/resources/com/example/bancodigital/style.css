@@ -1,0 +1,39 @@
+@font-face {
+    font-family: poppins;
+    src: url("../../../fonts/poppins.black.ttf");
+}
+
+#msglb1 {
+    -fx-font-family: 'Poppins Black';
+}
+
+#button1 {
+    -fx-font-family: 'Poppins Black';
+    -fx-font-weight: 100;
+    -fx-background-color: red;
+    -fx-text-fill: white;
+
+}
+
+.dash_label {
+    -fx-font-family: 'Poppins Black';
+    -fx-text-fill: white;
+}
+
+#dashBoard {
+    -fx-background-color: red;
+    -fx-background-radius: 20px;
+}
+
+#dashButton {
+    -fx-font-family: 'Poppins Black';
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-background-radius: 8px;
+    -fx-text-fill: red;
+
+}
+
+#dashButton:hover {
+    -fx-font-size: 9px;
+}

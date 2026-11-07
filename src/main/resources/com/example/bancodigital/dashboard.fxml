@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bancodigital.DashController">
+
+   <children>
+      <AnchorPane id="dashBoard" maxHeight="314.0" maxWidth="278.0" prefHeight="314.0" prefWidth="278.0" stylesheets="@style.css">
+         <children>
+            <TextField fx:id="inputPassword" layoutX="26.0" layoutY="224.0" prefHeight="26.0" prefWidth="225.0" />
+            <TextField fx:id="inputName" layoutX="25.0" layoutY="144.0" prefHeight="26.0" prefWidth="225.0" />
+            <Label layoutX="25.0" layoutY="101.0" prefHeight="34.0" prefWidth="65.0" styleClass="dash_label" text="Nome:" />
+            <Label layoutX="25.0" layoutY="181.0" prefHeight="34.0" prefWidth="65.0" styleClass="dash_label" text="senha:" />
+            <Button id="dashButton" fx:id="dash_button" layoutX="100.8" layoutY="285.4" mnemonicParsing="false" onAction="#dashCreateUser" prefHeight="26.0" prefWidth="75.0" styleClass="dashButton" text="VERIFICAR" AnchorPane.bottomAnchor="9.800000000000011" AnchorPane.leftAnchor="100.8" AnchorPane.rightAnchor="102.40000000000003" AnchorPane.topAnchor="285.4">
+               <font>
+                  <Font size="9.0" />
+               </font></Button>
+            <StackPane layoutX="25.0" layoutY="22.0" prefHeight="47.0" prefWidth="226.0">
+               <children>
+                  <ImageView id="logo" fx:id="logo" fitHeight="49.0" fitWidth="226.0" pickOnBounds="true" preserveRatio="true" StackPane.alignment="CENTER" />
+               </children>
+            </StackPane>
+            <Button fx:id="reButton" layoutX="115.0" layoutY="254.0" mnemonicParsing="false" onAction="#loginChangeDash" prefHeight="11.0" prefWidth="154.0" style="-fx-font-family: Poppins Black; -fx-background-color: transparent; -fx-text-fill: white; -fx-border-color: transparent; -fx-underline: true;" text="Já possui uma conta? Faça login.">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Button>
+            <Label fx:id="dashText" layoutX="26.0" layoutY="124.0" style="-fx-text-fill: white;" />
+         </children>
+      </AnchorPane>
+   </children>
+</HBox>

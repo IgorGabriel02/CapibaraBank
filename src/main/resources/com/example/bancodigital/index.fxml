@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.bancodigital.HelloController">
+   <left>
+
+      <VBox prefHeight="400.0" prefWidth="800.0" BorderPane.alignment="TOP_CENTER">
+         <children>
+            <Label id="msglb1"  text="Olá usuário, bem vindo ao Capibara Bank!">
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets top="100.0" />
+               </padding>
+               <font>
+                  <Font size="30.0" />
+               </font>
+            </Label>
+            <Button id="button1"  mnemonicParsing="false" onAction="#trocar" prefHeight="30.0" prefWidth="100.0" text="Iniciar">
+               <VBox.margin>
+                  <Insets left="10.0" top="30.0" />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+</BorderPane>
